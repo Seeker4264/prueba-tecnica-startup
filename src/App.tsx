@@ -53,9 +53,9 @@ function App() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="chatIcon">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M6 4m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z" />
@@ -80,7 +80,13 @@ function App() {
               Loading...
             </h2>
             :
-            messages.map((value) => messageComponent(value))
+            messages.map((value, index) => {
+              return (
+                <div key={index}>
+                  {messageComponent(value)}
+                </div>
+              )
+            })
             }
           </div>
         </div>
